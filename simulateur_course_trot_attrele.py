@@ -4,6 +4,11 @@ from copy import deepcopy
 
 #the main function of the game
 def generate_horses(horse_quantity : int):
+    """
+    Fonction pour generer la liste de chevaux d'apres un template
+    :param horse_quantity: la quantité de chevaux
+    :return: la liste de chevaux
+    """
     horse_template = {'horse_n': 1,'speed':0, 'status':'playing','distance': 0}
     horse_list = []
 
@@ -18,6 +23,11 @@ def generate_horses(horse_quantity : int):
     return horse_list
 
 def play(horse_list,output_type):
+    """
+    Fonction pour tourner le jeux
+    :param horse_list: La liste de chevaux
+    :param output_type: le type de sortie
+    """
     #VARS
     simulated_time = 10
     podium = []
@@ -98,7 +108,6 @@ def apply_dice(dice : int, horse : dict):
     Fonction pour appliquer la vitesse correcte d'apres le dé
     :param dice: valeur du dé
     :param horse: cheval à mettre à jour
-    :return:
     """
     match dice:
         case 1:
@@ -132,10 +141,17 @@ def apply_dice(dice : int, horse : dict):
 
 
 def barrier():
+    """
+    Fonction pour créer une barriere de 30 "-"
+    """
     print('-' * 30)
 
 
 def print_map(horse_list : dict):
+    """
+    Fontion pour afficher la carte de jeux
+    :param horse_list: La liste des chevaux
+    """
     for h in horse_list:
         # TESTS
         progress = h['distance'] // 30
