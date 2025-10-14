@@ -51,6 +51,7 @@ def play(horse_list,output_type):
                 if horse['distance'] >= 2500:
                     horse['status'] = 'finished'
                     podium.append(horse)
+                    horse['distance'] = 2500
 
         #check if all horses have finished or are Disqualified
         if all(horse['status'] in ['finished', 'DQ'] for horse in horse_list):
@@ -68,6 +69,9 @@ def play(horse_list,output_type):
 
             #print podium
             barrier()
+            # print a map
+            print_map(horse_list)
+            barrier()
             print("Le jeu vient de finir")
             for i,h in enumerate(podium):
                 print(f"Place {i+1} | Cheval {h['horse_n']} | Vitesse : {h['speed']} | Distance {h['distance']} | Status {h['status']}")
@@ -83,7 +87,8 @@ def play(horse_list,output_type):
             #print the time
             print(f'Le temps actuel de course est de {simulated_time} secondes')
             barrier()
-
+            #print a map
+            print_map(horse_list)
             #add12
             simulated_time += 10
             input('Taper sur Enter pour continuer...')
@@ -129,6 +134,18 @@ def apply_dice(dice : int, horse : dict):
 def barrier():
     print('-' * 30)
 
+
+def print_map(horse_list : dict):
+    for h in horse_list:
+        # TESTS
+        progress = h['distance'] // 30
+        progress_bar = '▓' * progress + '░' * (2500 // 30 - progress)
+        if h['status'] == 'playing':
+            print(f'{h['horse_n']} : {progress_bar}')
+        elif h['status'] == 'DQ':
+            print(f"\033[91m{h['horse_n']} : {progress_bar}\033[0m")
+        elif h['status'] == 'finished':
+            print(f"\033[92m{h['horse_n']} : {progress_bar}\033[0m")
 
 
 
