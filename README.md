@@ -1,5 +1,6 @@
 
 **🐎 Jeu de Course de Chevaux (Terminal)**
+  
   Ce projet est un jeu de course de chevaux écrit en Python.
   Il se joue entièrement dans le terminal.
 ***
