@@ -51,6 +51,7 @@
 	- Gris → cheval en course
 ***
 **📁 Fichier**
+
 main.py : contient tout le code
 ***
 **🔧 Dépendances**
@@ -59,9 +60,11 @@ main.py : contient tout le code
  - copy (deepcopy)
 ***
 **👨‍💻 Auteur**
+
 Développé par Rafael DA SILVA.
 Projet pour apprendre Python en créant un jeu simple et interactif.
 Projet fait comme exercice pour FMS dans le cadre de la formation Python.
 ***
 **📄 Licence**
+
 Ce jeu peut être utilisé, modifié et partagé librement.
