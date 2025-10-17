@@ -55,6 +55,7 @@
 main.py : contient tout le code
 ***
 **🔧 Dépendances**
+
 *Aucune. Le script utilise uniquement les bibliothèques standards suivantes :*
  - random
  - copy (deepcopy)
